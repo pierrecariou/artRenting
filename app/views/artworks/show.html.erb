@@ -3,6 +3,8 @@
   <%= cl_image_tag @artwork.photo, height: 300, width: 400, crop: :fill %>
   <%= @artwork.category %>
   <%= @artwork.availability %>
+  <p>Available from :<%= @artwork.start_date %></p>
+  <p>to : <%= @artwork.end_date %></p>
   <% if policy(@artwork).edit? %>
     <%= link_to  edit_artwork_path(@artwork) do %>
       <i class="fas fa-edit"></i>
