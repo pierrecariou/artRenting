@@ -15,7 +15,8 @@ class ArtworksController < ApplicationController
   def create
     @artwork = Artwork.new(artwork_params)
     if @artwork.save
-      redirect_to artworks_path
+      raise
+      redirect_to artworks_path(@artwork)
     else
       render :new
     end
