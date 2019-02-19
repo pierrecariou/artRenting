@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts 'Cleaning database...'
+puts 'Cleaning database.....'
 Artwork.destroy_all
 
 url1 = 'https://payload.cargocollective.com/1/22/726497/12334190/debord_1750.jpg'
