@@ -1,14 +1,17 @@
 <h1> Artworks </h1>
 
+
 <ul>
-<% @artworks.each do |artwork|  %>
-  <li>
-    <%= artwork.name  %>
-    <%= artwork.photo %>
-    <%= artwork.category %>
-    <%= artwork.availability %>
-  </li>
-<% end %>
+  <% @artworks.each do |artwork|  %>
+    <li>
+      <% if policy(Artwork).show? %>
+        <%= link_to artwork.name, artwork_path(artwork) %>
+      <% end %>
+      <%= cl_image_tag artwork.photo, height: 300, width: 400, crop: :fill %>
+      <%= artwork.category %>
+      <%= artwork.availability %>
+    </li>
+  <% end %>
 </ul>
 
 
