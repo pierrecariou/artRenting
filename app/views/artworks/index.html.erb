@@ -3,11 +3,12 @@
 <ul>
 <% @artworks.each do |artwork|  %>
   <li>
-    <%= artwork.name  %>
+    <%= link_to artwork.name, artwork_path(artwork) %>
      <%= cl_image_tag artwork.photo, height: 300, width: 400, crop: :fill %>
     <%= artwork.category %>
     <%= artwork.availability %>
   </li>
+
 <% end %>
 </ul>
 
