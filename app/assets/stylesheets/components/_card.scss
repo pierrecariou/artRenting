@@ -7,11 +7,13 @@
   color: white;
   position: relative;
   transition: height 0.3s, box-shadow 0.3s;
+  opacity: 0.8;
 }
 
 .card:hover {
   height: 330px;
   box-shadow: 20px 20px 40px 0px rgba(0,0,0,0.5);
+  opacity: 1;
 }
 
 
