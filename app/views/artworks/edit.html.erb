@@ -1,5 +1,4 @@
-<h1><%= @artwork.name %></h1>
-
+<h1>New artwork</h1>
 
 <%= simple_form_for(@artwork) do |f| %>
   <div class="form-group">
@@ -19,5 +18,3 @@
 
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
-
-<%= link_to 'back', artwork_path(@artwork) %>
