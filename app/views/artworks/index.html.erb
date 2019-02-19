@@ -1,11 +1,15 @@
 <h1> Artworks </h1>
 
+<ul>
 <% @artworks.each do |artwork|  %>
-  <%= artwork.name  %>
-  <%= artwork.photo %>
-  <%= artwork.category %>
-  <%= artwork.availibility %>
+  <li>
+    <%= artwork.name  %>
+    <%= artwork.photo %>
+    <%= artwork.category %>
+    <%= artwork.availability %>
+  </li>
 <% end %>
+</ul>
 
 
 
