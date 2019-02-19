@@ -2,18 +2,16 @@
 
 
 <ul>
-<% @artworks.each do |artwork|  %>
-  <li>
-    <%= link_to artwork.name, artwork_path(artwork) %>
-     <%= cl_image_tag artwork.photo, height: 300, width: 400, crop: :fill %>
-    <%= artwork.category %>
-    <%= artwork.availability %>
-    <% if policy(Artwork).show? %>
-      <%= link_to "artwork", artwork_path(artwork) %>
-    <% end %>
-  </li>
-
-<% end %>
+  <% @artworks.each do |artwork|  %>
+    <li>
+      <% if policy(Artwork).show? %>
+        <%= link_to artwork.name, artwork_path(artwork) %>
+      <% end %>
+      <%= cl_image_tag artwork.photo, height: 300, width: 400, crop: :fill %>
+      <%= artwork.category %>
+      <%= artwork.availability %>
+    </li>
+  <% end %>
 </ul>
 
 
