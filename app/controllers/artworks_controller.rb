@@ -1,7 +1,6 @@
 class ArtworksController < ApplicationController
 
   def index
-    @artworks = Artwork.all
     @artworks = policy_scope(Artwork)
   end
 
@@ -45,7 +44,6 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_params
-    params.require(:artwork).permit(:name, :category, :photo, :availibility)
+    params.require(:artwork).permit(:name, :category, :photo, :availability)
   end
-
 end
