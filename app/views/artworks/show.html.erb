@@ -2,8 +2,8 @@
 
   <%= @artwork.photo %>
   <%= @artwork.category %>
-  <%= @artwork.availibility %>
-  <% if policy(artwork).edit? %>
+  <%= @artwork.availability %>
+  <% if policy(@artwork).edit? %>
     <%= link_to "Update", edit_artwork_path(@artwork) %>
   <% end %>
 
