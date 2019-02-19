@@ -4,9 +4,11 @@
   <%= @artwork.category %>
   <%= @artwork.availability %>
   <% if policy(@artwork).edit? %>
-    <%= link_to "Update", edit_artwork_path(@artwork) %>
+    <%= link_to  edit_artwork_path(@artwork) do %>
+      <i class="fas fa-edit"></i>
+    <% end %>
   <% end %>
 
 
-
+<%= link_to 'back', artworks_path %>
 
