@@ -10,6 +10,7 @@ class ArtworksController < ApplicationController
   end
 
   def new
+    @user = current_user
     @artwork = Artwork.new
     authorize @artwork
   end
@@ -17,14 +18,16 @@ class ArtworksController < ApplicationController
   def create
     @artwork = Artwork.new(artwork_params)
     authorize @artwork
+    @artwork.user = current_user
     if @artwork.save
-      redirect_to artworks_path
+      redirect_to artwork_path(@artwork)
     else
       render :new
     end
   end
 
   def edit
+    @user = current_user
     @artwork = Artwork.find(params[:id])
     authorize @artwork
   end
@@ -32,7 +35,9 @@ class ArtworksController < ApplicationController
   def update
     @artwork = Artwork.find(params[:id])
     authorize @artwork
+    @artwork.user = current_user
     @artwork.update(artwork_params)
+    redirect_to artwork_path(@artwork)
   end
 
   def destroy
