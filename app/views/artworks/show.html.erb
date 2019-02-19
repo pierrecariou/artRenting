@@ -1,14 +1,19 @@
-<h1> <%= @artwork.name %> </h1>
-
+<div class="wrapper">
+<center>
+  <h1> <%= @artwork.name %> </h1>
   <%= cl_image_tag @artwork.photo, height: 300, width: 400, crop: :fill %>
+</center>
+<center>
   <%= @artwork.category %>
   <%= @artwork.availability %>
   <% if policy(@artwork).edit? %>
     <%= link_to  edit_artwork_path(@artwork) do %>
-      <i class="fas fa-edit"></i>
-    <% end %>
+    <i class="fas fa-edit"></i>
+  <% end %>
+  </center>
   <% end %>
 
-
+<center>
 <%= link_to 'back', artworks_path %>
-
+  </center>
+</div>
