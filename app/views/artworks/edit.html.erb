@@ -1,5 +1,5 @@
-<h1><%= @artwork.name %></h1>
 
+<h1><%= @artwork.name %></h1>
 
 <%= simple_form_for(@artwork) do |f| %>
   <div class="form-group">
@@ -21,3 +21,4 @@
 <% end %>
 
 <%= link_to 'back', artwork_path(@artwork) %>
+
