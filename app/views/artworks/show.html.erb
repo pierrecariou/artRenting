@@ -1,5 +1,8 @@
 <h1> <%= @artwork.name %> </h1>
 
+<% if policy(Artwork).index? %>
+  <%= link_to "artworks", artworks_path %>
+<% end %>
 
   <%= @artwork.photo %>
   <%= @artwork.category %>

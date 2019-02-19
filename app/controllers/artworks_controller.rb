@@ -2,10 +2,12 @@ class ArtworksController < ApplicationController
 
   def index
     @artworks = Artwork.all
+    authorize @artwork
   end
 
   def show
     @artwork = Artwork.find(params[:id])
+    authorize @artwork
   end
 
   def new

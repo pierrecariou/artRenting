@@ -1,5 +1,9 @@
 <h1> Artworks </h1>
 
+<% if policy(Artwork).show? %>
+  <%= link_to "artwork", artworks_path(@artwork) %>
+<% end %>
+
 <% @artworks.each do |artwork|  %>
   <%= artwork.name  %>
   <%= artwork.photo %>
