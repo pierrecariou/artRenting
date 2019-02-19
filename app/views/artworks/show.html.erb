@@ -1,6 +1,12 @@
 <h1> <%= @artwork.name %> </h1>
 
-
-  <%= @artwork.photo %>
+  <%= cl_image_tag @artwork.photo, height: 300, width: 400, crop: :fill %>
   <%= @artwork.category %>
-  <%= @artwork.availibility %>
+  <%= @artwork.availability %>
+  <% if policy(@artwork).edit? %>
+    <%= link_to "Update", edit_artwork_path(@artwork) %>
+  <% end %>
+
+
+
+
