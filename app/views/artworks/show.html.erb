@@ -1,9 +1,13 @@
 <h1> <%= @artwork.name %> </h1>
 
-<% if policy(Artwork).index? %>
-  <%= link_to "artworks", artworks_path %>
-<% end %>
 
   <%= @artwork.photo %>
   <%= @artwork.category %>
   <%= @artwork.availibility %>
+
+<% @artworks.each do |artwork| %>
+  <% if policy(artwork).edit? %>
+    <%= link_to "Update", edit_artwork_path(artwork) %>
+  <% end %>
+<% end %>
+

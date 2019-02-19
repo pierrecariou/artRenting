@@ -4,13 +4,24 @@ class ArtworkPolicy < ApplicationPolicy
       scope.all
     end
 
-    def index
+    def index?
       true
     end
 
-    def show
+    def show?
       true
     end
 
+    def create?
+      true
+    end
+
+    def update?
+      record.user == user
+    end
+
+    def destroy?
+      record.user == user
+    end
   end
 end
