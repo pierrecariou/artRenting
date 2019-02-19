@@ -1,6 +1,6 @@
 <h1> <%= @artwork.name %> </h1>
 
-  <%= @artwork.photo %>
+  <%= cl_image_tag @artwork.photo, height: 300, width: 400, crop: :fill %>
   <%= @artwork.category %>
 
 

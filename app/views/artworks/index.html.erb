@@ -4,7 +4,7 @@
 <% @artworks.each do |artwork|  %>
   <li>
     <%= artwork.name  %>
-    <%= artwork.photo %>
+     <%= cl_image_tag artwork.photo, height: 300, width: 400, crop: :fill %>
     <%= artwork.category %>
     <%= artwork.availability %>
   </li>
