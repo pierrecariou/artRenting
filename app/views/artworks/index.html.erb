@@ -5,7 +5,7 @@
 <% @artworks.each do |artwork|  %>
   <li>
     <%= artwork.name  %>
-     <%= cl_image_tag artwork.photo, height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag artwork.photo, height: 300, width: 400, crop: :fill %>
     <%= artwork.category %>
     <%= artwork.availability %>
     <% if policy(Artwork).show? %>
