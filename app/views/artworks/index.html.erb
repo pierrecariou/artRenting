@@ -1,5 +1,6 @@
 <h1> Artworks </h1>
 
+
 <ul>
 <% @artworks.each do |artwork|  %>
   <li>
@@ -7,6 +8,9 @@
      <%= cl_image_tag artwork.photo, height: 300, width: 400, crop: :fill %>
     <%= artwork.category %>
     <%= artwork.availability %>
+    <% if policy(Artwork).show? %>
+      <%= link_to "artwork", artwork_path(artwork) %>
+    <% end %>
   </li>
 <% end %>
 </ul>
