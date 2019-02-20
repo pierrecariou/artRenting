@@ -12,7 +12,6 @@
 
       <!-- Links when logged in -->
       <%= link_to "dashboard", "/users/dashboard", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "update your profile", edit_user_registration_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
 
       <%= link_to "create artwork", "/artworks/new", class: "navbar-wagon-item navbar-wagon-link" %>
 
@@ -26,6 +25,9 @@
               <%= link_to user_path(current_user) do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
+            </li>
+            <li>
+            <%= link_to "update your profile", edit_user_registration_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
             </li>
             <li>
               <%= link_to "#" do %>
