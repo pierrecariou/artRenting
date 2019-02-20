@@ -26,7 +26,7 @@
 
   <div class ="info">
     <h3>Made by:</h3>
-    <p><%= @artwork.user.name %></p>
+    <p><%= link_to @artwork.user.name, user_path(@artwork.user) %></p>
     <p><%= @artwork.user.category %></p>
   </div>
 
