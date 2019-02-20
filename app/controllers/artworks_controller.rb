@@ -44,6 +44,7 @@ class ArtworksController < ApplicationController
     @artwork = Artwork.find(params[:id])
     authorize @artwork
     @artwork.destroy
+    redirect_to artworks_path
   end
 
   private

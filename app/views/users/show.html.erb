@@ -1,10 +1,44 @@
-<h1><%= @user.name %></h1>
-<%if @user.artist %>
-  <h3> artist </h3>
-<%else %>
-  <h3>host</h3>
-<%end %>
-<p><%= @user.category %></p>
+<div class="container">
 
+  <div class="profile-content">
+    <div class="profile-photo">
+      <%= cl_image_tag @user.photo %>
+    </div>
+
+    <div class="profile-description">
+      <h1><%= @user.name %></h1>
+      <%if @user.artist %>
+        <h3> artist </h3>
+      <%else %>
+        <h3>host</h3>
+      <%end %>
+
+      <p><%= @user.category %></p>
+    </div>
+  </div>
+
+
+  <% @user.artworks.each do |artwork| %>
+    <div class="col-xs-12 col-sm-4 card-height">
+
+      <div class="cards">
+
+        <div class="card" style="background-image: url('<%= cl_image_path artwork.photo, height: 300, width: 400, crop: :fill %>')"></div>
+
+        <div class="card-description">
+          <h3>
+            <% if policy(Artwork).show? %>
+            <%= link_to artwork.name, artwork_path(artwork) %>
+            <% end %>
+          </h3>
+          <p><%= artwork.category %></p>
+        </div>
+
+      </div>
+    </div>
+
+  <% end %>
+
+</div>
 
 
