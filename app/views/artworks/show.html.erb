@@ -33,6 +33,7 @@
 
   <div class ="info">
     <h3>Made by:</h3>
+    <p><%= link_to @artwork.user.name, user_path(@artwork.user) %></p>
     <h5><%= @artwork.user.name %></h5>
     <p><%= @artwork.user.category %></p>
   </div>
