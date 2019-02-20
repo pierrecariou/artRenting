@@ -1,26 +1,28 @@
-<h1> <%= @artwork.name %> </h1>
+<div class="wrapper">
 
-  <%= cl_image_tag @artwork.photo, height: 300, width: 400, crop: :fill %>
-  <%= @artwork.category %>
-  <%= @artwork.availability %>
-  <p>Available from :<%= @artwork.start_date %></p>
-  <p>to : <%= @artwork.end_date %></p>
-  <% if policy(@artwork).edit? %>
-    <%= link_to  edit_artwork_path(@artwork) do %>
-      <i class="fas fa-edit"></i>
-    <% end %>
-  <% end %>
+  <center>
+    <h1> <%= @artwork.name %> </h1>
+    <div class="image">
+      <%= cl_image_tag @artwork.photo, height: 500, width: 600, crop: :fill %>
+      <div class="edit">
+        <% if policy(@artwork).edit? %>
+          <%= link_to  edit_artwork_path(@artwork) do %>
+          <i class="fas fa-edit"></i>
+          <%end %>
+        <%end %>
+      </div>
+    </div>
+  </center>
+
+  <center>
+    <%= @artwork.category %>
+    <br />
+    <%= @artwork.availability %>
+    <p>Available from :<%= @artwork.start_date %></p>
+    <p>to : <%= @artwork.end_date %></p>
+  </center>
 
 
-<%= link_to 'back', artworks_path %>
-
-<h3>Made by:</h3>
-<p><%= @artwork.user.name %></p>
-<%if @artwork.user.artist %>
-  <p>Artist (<%= @artwork.user.category %>)</p>
-<%else %>
-  <p>Host (<p><%= @artwork.user.category %></p>)</p>
-<%end %>
 
 <h2>Book this artwork:</h2>
 
@@ -29,4 +31,12 @@
   <%= f.input :date_finish %>
   <%= f.submit "send", class: "btn btn-primary" %>
 <% end %>
+
+  <div class ="info">
+    <h3>Made by:</h3>
+    <p><%= @artwork.user.name %></p>
+    <p><%= @artwork.user.category %></p>
+  </div>
+
+</div>
 
