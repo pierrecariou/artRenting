@@ -1,13 +1,16 @@
- <%@user.bookings.each do |booking|%>
-  <% if booking.status == "pending" %>
-    <h3>An host is interested about your artwork :</h3>
-    <%= link_to 'accept', accept_booking_path(booking) %>
-    <%= link_to 'decline', decline_booking_path(booking) %>
+<div class="container">
 
-  <% elsif booking.status == "accepted" %>
-    <h3>accepted!</h3>
+   <%@user.bookings.each do |booking|%>
+    <% if booking.status == "pending" %>
+      <h3>An host is interested about <%=  booking.artwork.name %> :</h3>
+      <%= link_to 'accept', accept_booking_path(booking) %>
+      <%= link_to 'decline', decline_booking_path(booking) %>
 
+    <% elsif booking.status == "accepted" %>
+      <h3>accepted!</h3>
+
+    <%end %>
   <%end %>
-<%end %>
+</div>
 
 
