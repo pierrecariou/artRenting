@@ -1,0 +1,31 @@
+.booking-pending {
+  h2 {
+    text-align: center;
+    color: red;
+  }
+  h3 {
+    text-align: center;
+  }
+}
+
+.booking-accepted {
+  margin-top: 50px;
+  h2 {
+    text-align: center;
+    color: #005792;
+  }
+  h3 {
+    text-align: center;
+  }
+}
+
+.booking-pending-artwork {
+  position: relative
+}
+
+.booking-links {
+  position: absolute;
+  right: 10px;
+  bottom: 35px;
+}
+}
