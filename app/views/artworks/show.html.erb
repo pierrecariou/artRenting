@@ -22,7 +22,6 @@
   </center>
 
 
-
 <h2>Book this artwork:</h2>
 
 <%= simple_form_for [@artwork, @booking] do |f| %>
@@ -30,7 +29,7 @@
   <%= f.input :date_finish %>
   <%= f.submit "send", class: "btn btn-primary" %>
 <% end %>
-
+  
   <div class ="info">
     <h3>Made by:</h3>
     <p><%= link_to @artwork.user.name, user_path(@artwork.user) %></p>
