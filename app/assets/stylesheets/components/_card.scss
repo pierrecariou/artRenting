@@ -18,15 +18,30 @@ h1 {
 }
 
 .cards {
+  position: relative;
   border: 1px solid #f4f9f4;
   border-radius: 5px;
   box-shadow: 1px 1px #f4f9f4;
   margin: 20px;
+   .link{
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+    background: black;
+    opacity: 0;
+    &:hover{
+      opacity:0.05;
+    }
+  }
 }
 
 .container {
   background-color: white;
   padding: 40px 0px;
+  margin-top: 40px;
 }
 
 .card:hover {
