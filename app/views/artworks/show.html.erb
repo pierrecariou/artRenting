@@ -18,15 +18,14 @@
     <%= @artwork.category %>
     <br />
     <%= @artwork.availability %>
-    <p>Available from :<%= @artwork.start_date %></p>
-    <p>to : <%= @artwork.end_date %></p>
+    <p>Available from :<%= @artwork.start_date %> to : <%= @artwork.end_date %></p>
   </center>
 
 
 
   <div class ="info">
     <h3>Made by:</h3>
-    <p><%= @artwork.user.name %></p>
+    <h5><%= @artwork.user.name %></h5>
     <p><%= @artwork.user.category %></p>
   </div>
 
