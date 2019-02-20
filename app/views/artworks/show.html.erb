@@ -1,41 +1,50 @@
-<div class="wrapper">
 
-  <center>
-    <h1> <%= @artwork.name %> </h1>
-    <div class="image">
-      <%= cl_image_tag @artwork.photo, height: 500, width: 600, crop: :fill %>
-      <div class="edit">
-        <% if policy(@artwork).edit? %>
-          <%= link_to  edit_artwork_path(@artwork) do %>
-          <i class="fas fa-edit"></i>
-          <%end %>
-        <%end %>
+<div class="container">
+  <div class="wrapper">
+
+    <div class="artwork-content">
+      <center>
+        <h1> <%= @artwork.name %> </h1>
+        <div class="image">
+          <%= cl_image_tag @artwork.photo, height: 500, width: 600, crop: :fill %>
+          <div class="edit">
+            <% if policy(@artwork).edit? %>
+              <%= link_to  edit_artwork_path(@artwork) do %>
+              <i class="fas fa-edit"></i>
+              <%end %>
+            <%end %>
+          </div>
+        </div>
+      </center>
+
+      <center>
+        <%= @artwork.category %>
+        <br />
+        <%= @artwork.availability %>
+        <p>Available from :<%= @artwork.start_date %> to : <%= @artwork.end_date %></p>
+      </center>
+
+      <div class ="info">
+        <h3>Made by:</h3>
+        <p><%= link_to @artwork.user.name, user_path(@artwork.user) %></p>
+        <p><%= @artwork.user.category %></p>
       </div>
     </div>
-  </center>
 
-  <center>
-    <%= @artwork.category %>
-    <br />
-    <%= @artwork.availability %>
-    <p>Available from :<%= @artwork.start_date %> to : <%= @artwork.end_date %></p>
-  </center>
-
-
-<h2>Book this artwork:</h2>
-
-<%= simple_form_for [@artwork, @booking] do |f| %>
-  <%= f.input :date_start %>
-  <%= f.input :date_finish %>
-  <%= f.submit "send", class: "btn btn-primary" %>
-<% end %>
-  
-  <div class ="info">
-    <h3>Made by:</h3>
-    <p><%= link_to @artwork.user.name, user_path(@artwork.user) %></p>
-    <h5><%= @artwork.user.name %></h5>
-    <p><%= @artwork.user.category %></p>
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-6">
+      <div class="artwork-booking">
+        <h2>Book this artwork:</h2>
+        <%= simple_form_for [@artwork, @booking] do |f| %>
+          <%= f.input :date_start %>
+          <%= f.input :date_finish %>
+          <%= f.submit "send", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 
+
+  </div>
 </div>
 
