@@ -1,22 +1,37 @@
-<div class="container">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path 'banner.jpg' %>');">
+  <div class="banner-content">
+    <h1> Art Spirit </h1>
+    <p> Decorate your life </p>
+  </div>
+</div>
 
-  <h1> Artworks </h1>
+<div class="container">
 
   <div class="row">
     <% @artworks.each do |artwork|  %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: url('<%= cl_image_path artwork.photo, height: 300, width: 400, crop: :fill %>')">
-          <div class="card-description">
 
-            <h2>
-              <% if policy(Artwork).show? %>
-              <%= link_to artwork.name, artwork_path(artwork) %>
-              <% end %>
-            </h2>
-            <p><%= artwork.category %></p>
-            <p><%= artwork.user.name %></p>
+      <div class="col-xs-12 col-sm-4 card-height">
+
+      <div class="cards">
+
+        <div class="card" style="background-image: url('<%= cl_image_path artwork.photo, height: 300, width: 400, crop: :fill %>')"></div>
+
+        <div class="card-description">
+          <h3>
+            <% if policy(Artwork).show? %>
+            <%= link_to artwork.name, artwork_path(artwork) %>
+            <% end %>
+          </h3>
+          <p><%= artwork.category %></p>
+          <ul>
+          <div class="user-name">
+            <li> <%= cl_image_tag artwork.user.photo.url(:bright_face) %></li>
+            <li><p><%= artwork.user.name %></p></li>
           </div>
+          </ul>
         </div>
+
+      </div>
       </div>
     <% end %>
   </div>
@@ -24,3 +39,14 @@
 </div>
 
 
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+  </div>
+</div>

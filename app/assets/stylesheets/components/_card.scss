@@ -1,3 +1,6 @@
+h1 {
+  text-align: center;
+}
 
 .card {
   height: 300px;
@@ -10,12 +13,27 @@
   opacity: 0.8;
 }
 
-.card:hover {
-  height: 330px;
-  box-shadow: 20px 20px 40px 0px rgba(0,0,0,0.5);
-  opacity: 1;
+.card-height {
+  height: 450px;
 }
 
+.cards {
+  border: 1px solid #f4f9f4;
+  border-radius: 5px;
+  box-shadow: 1px 1px #f4f9f4;
+  margin: 20px;
+}
+
+.container {
+  background-color: white;
+  padding: 40px 0px;
+}
+
+.card:hover {
+  height: 305px;
+  box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.5);
+  opacity: 1;
+}
 
 .card-user {
   position: absolute;
@@ -32,18 +50,32 @@
   text-transform: uppercase;
 }
 .card-description {
-  position: absolute;
+  position: relative;
   bottom: 10px;
   left: 10px;
+  height: 105px;
 }
-.card-description h2 {
-  font-size: 24px;
+
+.card-description a {
+  color: #005792 ;
+  text-decoration: none;
+  font-size: 16px;
 }
+
 .card-description p {
   font-size: 14px;
   opacity: 0.7;
   font-weight: lighter;
 }
+
+.card-description ul {
+  list-style: none;
+}
+
+.card-description li {
+  display: inline-flex;
+}
+
 .card-link {
   position: absolute;
   top: 0;
@@ -53,7 +85,14 @@
   z-index: 2;
   background: black;
   opacity: 0;
+  text-decoration: none;
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.user-name {
+  position: relative;
+  left: 153px;
+  top: -20px;
 }
