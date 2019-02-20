@@ -14,8 +14,11 @@ h1 {
 
 .info {
   position: absolute;
-  bottom: 85px;
-  right: 85px;
+  bottom: 240px;
+  left: 85px;
+  h5{
+  font-weight: bold;
+  }
 }
 
 .image {
