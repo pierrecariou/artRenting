@@ -14,8 +14,10 @@
 
       <div class="cards">
 
-        <div class="card" style="background-image: url('<%= cl_image_path artwork.photo, height: 300, width: 400, crop: :fill %>')"></div>
+          <%= link_to '',artwork_path(artwork), class: 'link' %>
 
+        <div class="card" style="background-image: url('<%= cl_image_path artwork.photo, height: 300, width: 400, crop: :fill %>')">
+        </div>
         <div class="card-description">
           <h3>
             <% if policy(Artwork).show? %>
@@ -24,10 +26,10 @@
           </h3>
           <p><%= artwork.category %></p>
           <ul>
-          <div class="user-name">
-            <li> <%= cl_image_tag artwork.user.photo.url(:bright_face) %></li>
-            <li><p><%= artwork.user.name %></p></li>
-          </div>
+            <div class="user-name">
+              <li> <%= cl_image_tag artwork.user.photo.url(:bright_face) %></li>
+              <li><p><%= artwork.user.name %></p></li>
+            </div>
           </ul>
         </div>
 
