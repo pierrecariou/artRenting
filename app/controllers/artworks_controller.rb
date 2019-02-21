@@ -14,7 +14,8 @@ class ArtworksController < ApplicationController
       {
         lng: artwork.longitude,
         lat: artwork.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat })
+        infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat }),
+        image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
   end
@@ -66,6 +67,6 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_params
-    params.require(:artwork).permit(:name, :category, :photo, :availability, :start_date, :end_date)
+    params.require(:artwork).permit(:name, :category, :photo, :availability, :start_date, :end_date, :address)
   end
 end
