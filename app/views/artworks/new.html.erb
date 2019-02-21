@@ -9,22 +9,27 @@
       </div>
 
       <%= simple_form_for(@artwork) do |f| %>
-       <div class="form-group">
-         <%= f.label :name %>
-         <%= f.text_field :name, class: 'form-control' %>
-       </div>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
 
-       <div class=“form-group”>
-       <% @categories = ['painting', 'sculpture', 'drawing', 'photo'] %>
-        <%= f.input :category, collection: @categories %>
-      </div>
+        <div class=“form-group”>
+         <% @categories = ['painting', 'sculpture', 'drawing', 'photo'] %>
+          <%= f.input :category, collection: @categories %>
+        </div>
 
         <div class="form-group">
-        <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-        <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+          <%= f.label :address %>
+          <%= f.text_field :address, class: 'form-control' %>
+        </div>
 
-         <%= f.input :photo_cache, as: :hidden %>
-       </div>
+        <div class="form-group">
+          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+          <%= f.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+
+           <%= f.input :photo_cache, as: :hidden %>
+        </div>
 
         <div class="form-group calendar" style="width: 400px; margin: 0 auto;">
           <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
@@ -34,7 +39,7 @@
         <div class="form-group">
          <%= f.label :price %>
          <%= f.text_field :price, class: 'form-control' %>
-       </div>
+        </div>
 
        <%= f.submit class: 'btn btn-primary' %>
       <% end %>

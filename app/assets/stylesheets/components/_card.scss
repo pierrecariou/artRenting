@@ -10,7 +10,7 @@ h1 {
   color: white;
   position: relative;
   transition: height 0.3s, box-shadow 0.3s;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .card-height {
@@ -33,7 +33,7 @@ h1 {
     background: black;
     opacity: 0;
     &:hover {
-      opacity: 0.01;
+      // opacity: 0.9;
     }
   }
 }

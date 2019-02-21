@@ -1,6 +1,8 @@
 
 <div class="container">
+
   <div class="wrapper">
+
     <div class="artwork-content">
       <h1> <%= @artwork.name %> </h1>
       <div class="image">
@@ -12,11 +14,13 @@
             <%end %>
           <%end %>
         </div>
+
         <div class="info-left">
           <p> <%= @artwork.category %> </p>
           <h3>Available from :<%= @artwork.start_date %> to : <%= @artwork.end_date %></h3>
           <p> Price : <%= @artwork.price %> €</p>
         </div>
+
         <div class ="info">
           <p>Made by:</p>
           <h3><%= link_to @artwork.user.name, user_path(@artwork.user) %></h3>
@@ -24,18 +28,24 @@
         </div>
       </div>
     </div>
+
     <div class="row-show">
-      <div class="col-sm-offset-3 col-sm-6">
+
+      <!-- <div class="col-sm-offset-3 col-sm-6"> -->
         <div class="artwork-booking">
-          <h2>Book this artwork:</h2>
+          <h2> Book this artwork: </h2>
+
           <%= simple_form_for [@artwork, @booking] do |f| %>
-          <%= f.input :date_start %>
-          <%= f.input :date_finish %>
-          <%= f.submit "send", class: "btn btn-primary" %>
+            <div class="form-group calendar" style="width: 400px; margin: 0 auto;">
+            <%= f.input :date_start, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :date_finish, as: :string, required: false, input_html: {class: "datepicker"} %>
+            </div>
+           <%= f.submit "send", class: "btn btn-primary" %>
           <% end %>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
+
   </div>
 </div>
 
