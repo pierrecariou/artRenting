@@ -13,8 +13,8 @@ class ArtworksController < ApplicationController
     @markers = @artworks_for_markers.map do |artwork|
       {
         lng: artwork.longitude,
-        lat: artwork.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat })
+        lat: artwork.latitude#,
+        # infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat })
       }
     end
   end
