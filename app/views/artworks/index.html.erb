@@ -5,57 +5,65 @@
   </div>
 </div>
 
-<div> <%= form_tag artworks_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find an artwork"
-  %>
-<% end %>
-</div>
-
 <div class="container">
 
   <div class="row">
-    <% @artworks_for_list.each do |artwork|  %>
 
-      <div class="col-xs-12 col-sm-4 card-height">
 
-      <div class="cards">
-
-          <%= link_to '',artwork_path(artwork), class: 'link' %>
-        <div class="card" style="background-image: url('<%= artwork.photo.url ? (cl_image_path artwork.photo, height: 300, width: 400, crop: :fill) : "https://media.cargocollective.com/1/22/726497/headerimg/FERGUS-WORK02188-copie.png"; %>')">
-        </div>
-        <div class="card-description">
-          <h3>
-            <% if policy(Artwork).show? %>
-            <%= link_to artwork.name, artwork_path(artwork) %>
-            <% end %>
-          </h3>
-          <p><%= artwork.category %></p>
-          <ul>
-            <div class="user-name">
-              <li> <%= cl_image_tag artwork.user.photo.url(:bright_face) %></li>
-              <li><p><%= artwork.user.name %></p></li>
-            </div>
-          </ul>
-        </div>
-
-      </div>
-      </div>
+    <div> <%= form_tag artworks_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find an artwork"
+      %>
     <% end %>
-  </div>
+    </div>
 
-  <div
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
+  </div>
 
 </div>
 
+
+  <div class="main-container">
+    <div class="row">
+      <% @artworks_for_list.each do |artwork|  %>
+
+        <div class="col-xs-12 col-sm-4 card-height">
+
+        <div class="cards">
+
+            <%= link_to '',artwork_path(artwork), class: 'link' %>
+          <div class="card" style="background-image: url('<%= artwork.photo.url ? (cl_image_path artwork.photo, height: 300, width: 400, crop: :fill) : "https://media.cargocollective.com/1/22/726497/headerimg/FERGUS-WORK02188-copie.png"; %>')">
+          </div>
+          <div class="card-description">
+            <h3>
+              <% if policy(Artwork).show? %>
+              <%= link_to artwork.name, artwork_path(artwork) %>
+              <% end %>
+            </h3>
+            <p><%= artwork.category %></p>
+            <ul>
+              <div class="user-name">
+                <li> <%= cl_image_tag artwork.user.photo.url(:bright_face) %></li>
+                <li><p><%= artwork.user.name %></p></li>
+              </div>
+            </ul>
+          </div>
+        </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div
+      id="map"
+      style="width: 100%;
+      height: 820px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+
+
+  </div>
 
 
 <div class="footer">
