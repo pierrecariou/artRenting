@@ -22,7 +22,7 @@ h1 {
   border: 1px solid #f4f9f4;
   border-radius: 5px;
   box-shadow: 1px 1px #f4f9f4;
-  margin: 20px;
+  margin: 0px 20px;
    .link {
     position: absolute;
     top: 0px;
@@ -33,7 +33,7 @@ h1 {
     background: black;
     opacity: 0;
     &:hover {
-      opacity:0.05;
+      height: 460px;
     }
   }
 }
@@ -45,7 +45,7 @@ h1 {
 }
 
 .card:hover {
-  height: 305px;
+  height: 460px;
   box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.5);
   opacity: 1;
 }
@@ -107,7 +107,7 @@ h1 {
 }
 
 .user-name {
-  position: relative;
-  left: 153px;
-  top: -20px;
+  position: absolute;
+  bottom: 0px;
+  right: 13px;
 }
