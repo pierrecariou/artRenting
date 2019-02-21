@@ -5,6 +5,15 @@
   </div>
 </div>
 
+<div> <%= form_tag artworks_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an artwork"
+  %>
+<% end %>
+</div>
+
 <div class="container">
 
   <div class="row">
@@ -15,7 +24,6 @@
       <div class="cards">
 
           <%= link_to '',artwork_path(artwork), class: 'link' %>
-
         <div class="card" style="background-image: url('<%= cl_image_path artwork.photo, height: 300, width: 400, crop: :fill %>')">
         </div>
         <div class="card-description">
@@ -37,6 +45,7 @@
       </div>
     <% end %>
   </div>
+
 
 </div>
 

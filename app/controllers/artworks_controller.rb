@@ -1,7 +1,12 @@
 class ArtworksController < ApplicationController
+  skip_after_action :verify_policy_scoped, only: :index
 
   def index
-    @artworks_for_list = policy_scope(Artwork)
+    if params[:query].present?
+      @artworks_for_list = Artwork.search_by_name(params[:query])
+    else
+      @artworks_for_list = Artwork.all
+    end
 
     @artworks_for_markers = Artwork.where.not(latitude: nil, longitude: nil)
 
