@@ -8,6 +8,12 @@
   }
 }
 
+.flex-booking {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .artwork-content {
   position: relative;
   width: 50%;
@@ -69,7 +75,6 @@
     color: #223B51;
   }
 }
-
 
 .artwork-booking {
   position: relative;
