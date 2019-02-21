@@ -5,17 +5,19 @@
   </div>
 </div>
 
-<div> <%= form_tag artworks_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find an artwork"
-  %>
-<% end %>
-</div>
 
 <div class="container">
+  <div> <%= form_tag artworks_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an artwork"
+    %>
+  <% end %>
+  </div>
+</div>
 
+<div class="main-container">
   <div class="row">
     <% @artworks_for_list.each do |artwork|  %>
 
@@ -45,17 +47,14 @@
       </div>
     <% end %>
   </div>
-
-
-</div>
-
   <div
     id="map"
     style="width: 100%;
-    height: 600px;"
+    height: 830px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
+</div>
 
 
 <div class="footer">
