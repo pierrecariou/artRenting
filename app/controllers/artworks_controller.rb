@@ -9,15 +9,20 @@ class ArtworksController < ApplicationController
     end
 
     @artworks_for_markers = Artwork.where.not(latitude: nil, longitude: nil)
-
     @markers = @artworks_for_markers.map do |artwork|
       {
         lng: artwork.longitude,
+
         lat: artwork.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat })
+
+        infoWindow: render_to_string(partial: "infowindow", locals: { artwork: artwork }),
+        #image_url: helpers.asset_url('')
+
       }
     end
+    # raise
   end
+
 
   def show
     @booking = Booking.new
@@ -66,6 +71,6 @@ class ArtworksController < ApplicationController
   private
 
   def artwork_params
-    params.require(:artwork).permit(:name, :category, :photo, :availability, :start_date, :end_date)
+    params.require(:artwork).permit(:name, :category, :photo, :availability, :start_date, :end_date, :address, :price)
   end
 end
