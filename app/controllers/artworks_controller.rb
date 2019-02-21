@@ -1,7 +1,17 @@
 class ArtworksController < ApplicationController
 
   def index
-    @artworks = policy_scope(Artwork)
+    @artworks_for_list = policy_scope(Artwork)
+
+    @artworks_for_markers = Artwork.where.not(latitude: nil, longitude: nil)
+
+    @markers = @artworks_for_markers.map do |artwork|
+      {
+        lng: artwork.longitude,
+        lat: artwork.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat })
+      }
+    end
   end
 
   def show
