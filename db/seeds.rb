@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database.....'
 Artwork.destroy_all
+User.destroy_all
 
 url1 = 'https://payload.cargocollective.com/1/22/726497/12334190/debord_1750.jpg'
 url2 = 'https://payload.cargocollective.com/1/22/726497/12334185/Sans-titre-1_1750.jpg'
@@ -17,16 +18,33 @@ url6 ='https://payload.cargocollective.com/1/22/726497/12334185/infinitions--2_1
 
 puts 'Creating artworks...'
 
-cyclique = Artwork.new(name: 'Débordement cyclique', category: 'gravure', user_id: 1)
-bienheureux = Artwork.new(name:'77 bienheureux', category:'sculpture', user_id: 1)
-magnesia = Artwork.new(name:'Magnésia', category: 'sculpture', user_id: 1)
-revele = Artwork.new(name: 'Révèle', category: 'Peinture', user_id: 1)
-trio = Artwork.new(name: 'trie eau', category: 'Peinture', user_id: 1, address: '20 rue clement marot 75008 Paris')
-infinition = Artwork.new(name: 'infinition', category: 'sculpture', user_id: 1, address: '16 villa gaudelet 75011 Paris')
+
+
+User.create(name: 'Jean-Michel', email: 'jeanmi@gmail.fr', password: 'yesssais', id: 1, category: 'sculptor')
+User.create(name: 'Jeanne', email: 'jeanne@gmail.fr', password: 'yesdfghjk', id: 2, category: 'sculptor')
+User.create(name: 'Pierre', email: 'pierre@gmail.fr', password: 'yesfcgvjkv', id: 3, category: 'sculptor')
+User.create(name: 'Samy', email: 'samy@gmail.fr', password: 'yesjnibhb', id: 4, category: 'painter')
+User.create(name: 'Claire', email: 'claire@gmail.fr', password: 'yesbhiouvg', id: 5, category: 'painter')
+User.create(name: 'Mickael', email: 'mickael@gmail.fr', password: 'yesguvytctr', id: 6, category: 'sculptor')
+
+cyclique = Artwork.new(name: 'Débordement cyclique', category: 'gravure', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 1)
+bienheureux = Artwork.new(name:'77 bienheureux', category:'sculpture', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 2)
+
+magnesia = Artwork.new(name:'Magnésia', category: 'sculpture', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 3)
+
+revele = Artwork.new(name: 'Révèle', category: 'Peinture', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 4)
+
+trio = Artwork.new(name: 'trie eau', category: 'Peinture', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 5)
+
+infinition = Artwork.new(name: 'infinition', category: 'sculpture', start_date: '2019-02-28', end_date: '2019-02-28', user_id: 6, address: '16 villa Gaudelet 75011 Paris')
+
+
+
 
 
 cyclique.remote_photo_url = url1
 cyclique.save
+
 bienheureux.remote_photo_url = url2
 bienheureux.save
 magnesia.remote_photo_url = url3
