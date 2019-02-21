@@ -10,7 +10,7 @@ h1 {
   color: white;
   position: relative;
   transition: height 0.3s, box-shadow 0.3s;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .card-height {
@@ -19,9 +19,7 @@ h1 {
 
 .cards {
   position: relative;
-  border: 1px solid #f4f9f4;
   border-radius: 5px;
-  box-shadow: 1px 1px #f4f9f4;
   margin: 20px;
    .link {
     position: absolute;
@@ -33,7 +31,7 @@ h1 {
     background: black;
     opacity: 0;
     &:hover {
-      opacity:0.05;
+      opacity:0.025;
     }
   }
 }
@@ -69,6 +67,10 @@ h1 {
   bottom: 10px;
   left: 10px;
   height: 105px;
+    h3{
+  color: #0F2332;
+  font-size: 15px
+    }
 }
 
 .card-description a {
