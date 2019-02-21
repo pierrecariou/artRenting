@@ -1,11 +1,16 @@
 h1 {
-  font-weight: bold;
+  color: #0F2332;
+}
+
+.container{
+  width: 1265px;
+  height: 100vh;
 }
 
 .wrapper {
   background-color: white;
-  min-height: 100vh;
-  padding-top: 30px;
+  height: 100vh;
+  padding-top: 10px;
   h1 {
     margin: 0;
   }
@@ -13,26 +18,55 @@ h1 {
 
 .artwork-content {
   position: relative;
+  width: 50%;
+  float:left;
 }
 
-.info {
-  position: absolute;
-  bottom: 240px;
-  left: 85px;
-  h5 {
-  font-weight: bold;
-  }
+.row-show {
+  width: 50%;
+  float:left;
 }
 
 .image {
+  left:70px;
   position: relative;
   width: 50%;
 }
 
+#info-left{
+  position: absolute;
+  bottom: -55px;
+  left: 110px;
+p{
+  margin:0px;
+  color: #0F2332;
+  margin:0px;
+  font-size: 13px;
+}
+}
+
+.info {
+  position: absolute;
+  bottom: 250px;
+  left: 450px;
+  h2{
+  color: #0F2332;
+  font-size:22px;
+  margin-top:0px;
+  margin-bottom:0px;
+  }
+  h3 {
+  color: #0F2332;
+  margin:0px;
+  font-size: 13px;
+  }
+}
+
+
 .edit {
   position: absolute;
-  bottom: 10px;
-  right: 40px;
+  bottom: 1px;
+  right: -110px;
 }
 
 
@@ -40,5 +74,10 @@ h1 {
   margin: 40px;
   h2 {
     text-align: center;
+    color: #0F2332;
+  }
+  p {
+    padding-bottom: 0px;
+    color: #0F2332;
   }
 }
