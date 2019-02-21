@@ -21,6 +21,21 @@
             <%end %>
           <%end %>
         </div>
+      </center>
+
+      <center>
+        <%= @artwork.category %>
+        <br />
+        <%= @artwork.availability %>
+        <p>Available from :<%= @artwork.start_date %> to : <%= @artwork.end_date %></p>
+        <p> Price : <%= @artwork.price %> €</p>
+      </center>
+
+      <div class ="info">
+        <h3>Made by:</h3>
+        <p><%= link_to @artwork.user.name, user_path(@artwork.user) %></p>
+        <p><%= @artwork.user.category %></p>
+
       </div>
     </div>
   <div class="row-show">
