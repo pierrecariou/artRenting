@@ -2,6 +2,11 @@ class ArtworksController < ApplicationController
 
   def index
     @artworks = policy_scope(Artwork)
+    if params[:query].present?
+      @artworks = Artwork.search_by_name(params[:query])
+    else
+      @artworks = Artwork.all
+    end
   end
 
   def show
