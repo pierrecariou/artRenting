@@ -13,9 +13,11 @@ class ArtworksController < ApplicationController
     @markers = @artworks_for_markers.map do |artwork|
       {
         lng: artwork.longitude,
+
         lat: artwork.latitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat }),
         image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+
       }
     end
   end
