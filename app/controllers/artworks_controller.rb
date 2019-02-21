@@ -14,8 +14,8 @@ class ArtworksController < ApplicationController
       {
         lng: artwork.longitude,
         lat: artwork.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat }),
-        image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+        # infoWindow: render_to_string(partial: "infowindow", locals: { flat: float }),
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
   end

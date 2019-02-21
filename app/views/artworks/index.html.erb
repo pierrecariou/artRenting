@@ -5,16 +5,20 @@
   </div>
 </div>
 
-<div> <%= form_tag artworks_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find an artwork"
-  %>
-<% end %>
-</div>
+
 
 <div class="container">
+<div class="row">
+  <div class="col-sm-offset-3 col-sm-6">
+    <%= form_tag artworks_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find an artwork"
+    %>
+  <% end %>
+  </div>
+</div>
 
   <div class="row">
     <% @artworks_for_list.each do |artwork|  %>
