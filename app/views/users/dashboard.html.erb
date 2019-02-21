@@ -1,47 +1,65 @@
-<div class="container">
 
-  <div class="row">
+<%if @user.artist %>
 
-    <div class="col-sm-offset-3 col-sm-6">
+<%@user.bookings.each do |booking|%>
+  <% if booking.status == "pending" %>
+      <h2> Your booking has not yet been confirmed</h2>
+      <h3><%= booking.artwork.name %></h3>
+      <%= cl_image_tag booking.artwork.photo, height: 500, width: 600, crop: :fill %>
+      <p>start :<%= booking.date_start%></p>
+      <p>end :<%= booking.date_finish %></p>
+    <%end %>
+<%end %>
 
-      <div class="booking-pending">
-        <h2> Booking requests :</h2>
-        <%@user.bookings.each do |booking|%>
-          <% if booking.status == "pending" %>
-            <div class="booking-pending-artwork">
-            <h3><%= booking.artwork.name %></h3>
-            <%= cl_image_tag booking.artwork.photo, height: 500, width: 600, crop: :fill %>
-            <p>start :<%= booking.date_start%></p>
-            <p>end :<%= booking.date_finish %></p>
+<%@user.bookings.each do |booking|%>
+  <% if booking.status == "accepted" %>
+    <h2>Your booking has been accepted !</h2>
+    <h3><%= booking.artwork.name %></h3>
+    <%= cl_image_tag booking.artwork.photo, height: 500, width: 600, crop: :fill %>
+    <p>start :<%= booking.date_start%></p>
+    <p>end :<%= booking.date_finish %></p>
+  <%end %>
+<%end %>
 
-            <div class="booking-links">
-              <%= link_to accept_booking_path(booking) do %>
-                <i class="fas fa-check"></i>
-              <% end %>
-              <%= link_to decline_booking_path(booking) do %>
-                <i class="fas fa-times"></i>
-              </div>
-            <% end %>
-          </div>
-          <%end %>
-        <%end %>
-      </div>
+  <%@user.bookings.each do |booking|%>
+  <% if booking.status == "deleted" %>
+    <h2>Bookings rejected</h2>
+    <h3><%= booking.artwork.name %></h3>
+    <%= cl_image_tag booking.artwork.photo, height: 500, width: 600, crop: :fill %>
+    <p>start :<%= booking.date_start%></p>
+    <p>end :<%= booking.date_finish %></p>
+  <%end %>
+<%end %>
 
-      <div class="booking-accepted">
-        <h2>Artworks booked:</h2>
-        <%@user.bookings.each do |booking|%>
-          <% if booking.status == "accepted" %>
-            <h3><%= booking.artwork.name %></h3>
-            <%= cl_image_tag booking.artwork.photo, height: 500, width: 600, crop: :fill %>
-            <p>start :<%= booking.date_start%></p>
-            <p>end :<%= booking.date_finish %></p>
-          <%end %>
-        <%end %>
-      </div>
-    </div>
-  </div>
+<%end %>
 
-</div>
+<%if @user.artist == nil  %>
+
+
+<% if @booking.status == "pending" %>
+    <h2> Booking requests :</h2>
+    <h3><%= @booking.artwork.name %></h3>
+    <%= cl_image_tag @booking.artwork.photo, height: 500, width: 600, crop: :fill %>
+    <p>start :<%= @booking.date_start%></p>
+    <p>end :<%= @booking.date_finish %></p>
+    <%= link_to accept_booking_path(@booking) do %>
+      <i class="fas fa-check"></i>
+    <% end %>
+    <%= link_to decline_booking_path(@booking) do %>
+      <i class="fas fa-times"></i>
+    <% end %>
+<%end %>
+
+<% if @booking.status == "accepted" %>
+  <h2>Artworks booked:</h2>
+  <h3><%= @booking.artwork.name %></h3>
+  <%= cl_image_tag @booking.artwork.photo, height: 500, width: 600, crop: :fill %>
+  <p>start :<%= @booking.date_start%></p>
+  <p>end :<%= @booking.date_finish %></p>
+<%end %>
+
+<%end %>
+
 
 
 

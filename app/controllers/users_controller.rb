@@ -7,5 +7,10 @@ class UsersController < ApplicationController
   def dashboard
     skip_authorization
     @user = current_user
+    @user.artworks.each do |artwork|
+      artwork.bookings.each do |booking|
+        @booking = booking
+      end
+    end
   end
 end
