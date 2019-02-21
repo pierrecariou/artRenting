@@ -17,12 +17,12 @@ url6 ='https://payload.cargocollective.com/1/22/726497/12334185/infinitions--2_1
 
 puts 'Creating artworks...'
 
-cyclique = Artwork.new(name: 'Débordement cyclique', category: 'gravure', user_id: 1)
-bienheureux = Artwork.new(name:'77 bienheureux', category:'sculpture', user_id: 1)
-magnesia = Artwork.new(name:'Magnésia', category: 'sculpture', user_id: 1)
-revele = Artwork.new(name: 'Révèle', category: 'Peinture', user_id: 1)
-trio = Artwork.new(name: 'trie eau', category: 'Peinture', user_id: 1)
-infinition = Artwork.new(name: 'infinition', category: 'sculpture', user_id: 1, address: '16 villa Gaudelet 75011 Paris')
+cyclique = Artwork.new(name: 'Débordement cyclique', category: 'gravure')
+bienheureux = Artwork.new(name:'77 bienheureux', category:'sculpture')
+magnesia = Artwork.new(name:'Magnésia', category: 'sculpture')
+revele = Artwork.new(name: 'Révèle', category: 'Peinture')
+trio = Artwork.new(name: 'trie eau', category: 'Peinture')
+infinition = Artwork.new(name: 'infinition', category: 'sculpture', address: '16 villa Gaudelet 75011 Paris')
 
 
 cyclique.remote_photo_url = url1
