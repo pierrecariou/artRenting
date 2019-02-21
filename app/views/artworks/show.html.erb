@@ -9,49 +9,33 @@
           <% if policy(@artwork).edit? %>
             <%= link_to  edit_artwork_path(@artwork) do %>
             <i class="fas fa-edit"></i>
-        </div>
-          <div class="info-left">
-            <p> <%= @artwork.category %> </p>
-            <h3>Available from :<%= @artwork.start_date %> to : <%= @artwork.end_date %></h3>
-          </div>
-          <div class ="info">
-            <p>Made by:</p>
-            <h3><%= link_to @artwork.user.name, user_path(@artwork.user) %></h3>
-            <p><%= @artwork.user.category %></p>
             <%end %>
           <%end %>
         </div>
-      </center>
-
-      <center>
-        <%= @artwork.category %>
-        <br />
-        <%= @artwork.availability %>
-        <p>Available from :<%= @artwork.start_date %> to : <%= @artwork.end_date %></p>
-        <p> Price : <%= @artwork.price %> €</p>
-      </center>
-
-      <div class ="info">
-        <h3>Made by:</h3>
-        <p><%= link_to @artwork.user.name, user_path(@artwork.user) %></p>
-        <p><%= @artwork.user.category %></p>
-
+        <div class="info-left">
+          <p> <%= @artwork.category %> </p>
+          <h3>Available from :<%= @artwork.start_date %> to : <%= @artwork.end_date %></h3>
+          <p> Price : <%= @artwork.price %> €</p>
+        </div>
+        <div class ="info">
+          <p>Made by:</p>
+          <h3><%= link_to @artwork.user.name, user_path(@artwork.user) %></h3>
+          <p><%= @artwork.user.category %></p>
+        </div>
       </div>
     </div>
-  <div class="row-show">
-    <div class="col-sm-offset-3 col-sm-6">
-      <div class="artwork-booking">
-        <h2>Book this artwork:</h2>
-        <%= simple_form_for [@artwork, @booking] do |f| %>
+    <div class="row-show">
+      <div class="col-sm-offset-3 col-sm-6">
+        <div class="artwork-booking">
+          <h2>Book this artwork:</h2>
+          <%= simple_form_for [@artwork, @booking] do |f| %>
           <%= f.input :date_start %>
           <%= f.input :date_finish %>
           <%= f.submit "send", class: "btn btn-primary" %>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-
-
   </div>
 </div>
 
