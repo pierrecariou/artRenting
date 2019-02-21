@@ -34,7 +34,14 @@
             <% end %>
           </h3>
           <p><%= artwork.category %></p>
+          <ul>
+            <div class="user-name">
+              <li> <%= cl_image_tag artwork.user.photo.url(:bright_face) %></li>
+              <li><p><%= artwork.user.name %></p></li>
+            </div>
+          </ul>
         </div>
+
       </div>
       </div>
     <% end %>
