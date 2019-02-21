@@ -12,17 +12,11 @@ class ArtworksController < ApplicationController
     @markers = @artworks_for_markers.map do |artwork|
       {
         lng: artwork.longitude,
-
         lat: artwork.latitude,
-
-        infoWindow: render_to_string(partial: "infowindow", locals: { artwork: artwork }),
-        #image_url: helpers.asset_url('')
-
+        infoWindow: render_to_string(partial: "infowindow", locals: { artwork: artwork })
       }
     end
-    # raise
   end
-
 
   def show
     @booking = Booking.new

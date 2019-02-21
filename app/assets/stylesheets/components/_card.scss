@@ -33,8 +33,7 @@ h1 {
     background: black;
     opacity: 0;
     &:hover {
-      // opacity:0.05;
-      height: 435px;
+      height: 460px;
     }
   }
 }
@@ -46,7 +45,7 @@ h1 {
 }
 
 .card:hover {
-  height: 435px;
+  height: 460px;
   box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.5);
   opacity: 1;
 }
@@ -110,5 +109,5 @@ h1 {
 .user-name {
   position: absolute;
   bottom: 0px;
-  right: 19px;
-}
+  right: 13px;
+
