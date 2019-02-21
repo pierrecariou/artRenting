@@ -21,14 +21,13 @@
 </div>
 
 <div class="main-container">
-  <div class="row">
+  <div class="row main-row">
     <% @artworks_for_list.each do |artwork|  %>
 
       <div class="col-xs-12 col-sm-4 card-height">
 
         <div class="cards">
 
-            <%= link_to '',artwork_path(artwork), class: 'link' %>
           <div class="card" style="background-image: url('<%= artwork.photo.url ? (cl_image_path artwork.photo, height: 300, width: 400, crop: :fill) : "https://media.cargocollective.com/1/22/726497/headerimg/FERGUS-WORK02188-copie.png"; %>')">
           </div>
           <div class="card-description">
@@ -41,7 +40,7 @@
             <ul>
               <div class="user-name">
                 <li> <%= cl_image_tag artwork.user.photo.url(:bright_face) %></li>
-                <li><p><%= artwork.user.name %></p></li>
+                <li><p><%= link_to artwork.user.name, user_path(artwork.user) %></p></li>
               </div>
             </ul>
           </div>
