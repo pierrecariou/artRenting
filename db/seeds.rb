@@ -22,7 +22,7 @@ bienheureux = Artwork.new(name:'77 bienheureux', category:'sculpture', user_id: 
 magnesia = Artwork.new(name:'Magnésia', category: 'sculpture', user_id: 1)
 revele = Artwork.new(name: 'Révèle', category: 'Peinture', user_id: 1)
 trio = Artwork.new(name: 'trie eau', category: 'Peinture', user_id: 1)
-infinition = Artwork.new(name: 'infinition', category: 'sculpture', user_id: 1, address: '16 villa Gaudelet 75011 Paris')
+infinition = Artwork.new(name: 'infinition', category: 'sculpture', user_id: 1)
 
 
 cyclique.remote_photo_url = url1
