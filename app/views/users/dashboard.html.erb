@@ -1,33 +1,39 @@
-
+<div class="bookings">
 <%if @user.artist %>
 
 <%@user.bookings.each do |booking|%>
   <% if booking.status == "pending" %>
       <h2> Your booking has not yet been confirmed</h2>
+      <div class="book">
       <h3><%= booking.artwork.name %></h3>
       <%= cl_image_tag booking.artwork.photo, height: 500, width: 600, crop: :fill %>
       <p>start :<%= booking.date_start%></p>
       <p>end :<%= booking.date_finish %></p>
+      </div>
     <%end %>
 <%end %>
 
 <%@user.bookings.each do |booking|%>
   <% if booking.status == "accepted" %>
+   <div class="book">
     <h2>Your booking has been accepted !</h2>
     <h3><%= booking.artwork.name %></h3>
     <%= cl_image_tag booking.artwork.photo, height: 500, width: 600, crop: :fill %>
     <p>start :<%= booking.date_start%></p>
     <p>end :<%= booking.date_finish %></p>
+    </div>
   <%end %>
 <%end %>
 
   <%@user.bookings.each do |booking|%>
   <% if booking.status == "deleted" %>
     <h2>Bookings rejected</h2>
+    <div class="book">
     <h3><%= booking.artwork.name %></h3>
     <%= cl_image_tag booking.artwork.photo, height: 500, width: 600, crop: :fill %>
     <p>start :<%= booking.date_start%></p>
     <p>end :<%= booking.date_finish %></p>
+    </div>
   <%end %>
 <%end %>
 
@@ -36,30 +42,39 @@
 <%if @user.artist == false  %>
 
 <% if @booking.status == "pending" %>
-    <h2> Booking requests :</h2>
+    <h2> Booking requests </h2>
+<div class="card-book">
+  <div class="book">
     <h3><%= @booking.artwork.name %></h3>
     <%= cl_image_tag @booking.artwork.photo, height: 500, width: 600, crop: :fill %>
     <p>start :<%= @booking.date_start%></p>
     <p>end :<%= @booking.date_finish %></p>
+  </div>
+  <div class="buttons">
     <%= link_to accept_booking_path(@booking) do %>
-      <i class="fas fa-check"></i>
+      <button type="button" class="btn btn-primary">accept</button>
     <% end %>
     <%= link_to decline_booking_path(@booking) do %>
-      <i class="fas fa-times"></i>
+      <button type="button" class="btn btn-primary">decline</button>
     <% end %>
+    </div>
+  </div>
 <%end %>
 
 <% if @booking.status == "accepted" %>
-  <h2>Artworks booked:</h2>
+
+  <h2>Artworks booked</h2>
+  <div class="book">
   <h3><%= @booking.artwork.name %></h3>
   <%= cl_image_tag @booking.artwork.photo, height: 500, width: 600, crop: :fill %>
   <p>start :<%= @booking.date_start%></p>
   <p>end :<%= @booking.date_finish %></p>
+</div>
 <%end %>
 
 <%end %>
 
-
+</div>
 
 
 

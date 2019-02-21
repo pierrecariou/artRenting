@@ -23,16 +23,24 @@
   position: absolute;
   bottom: 240px;
   left: 555px;
+
   h5 {
     font-weight: bold;
   }
   h3 {
     margin :0px;
     color: #223B51;
+
   }
   a {
     color: #223B51;
+    text-decoration: none !important;
   }
+
+  a:hover {
+    opacity: 0.8;
+  }
+
   p {
     font-size: 13px;
     margin:0px;
