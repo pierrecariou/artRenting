@@ -19,6 +19,7 @@ url6 ='https://payload.cargocollective.com/1/22/726497/12334185/infinitions--2_1
 puts 'Creating artworks...'
 
 
+
 User.create(name: 'Jean-Michel', email: 'jeanmi@gmail.fr', password: 'yesssais', id: 1, category: 'sculptor')
 User.create(name: 'Jeanne', email: 'jeanne@gmail.fr', password: 'yesdfghjk', id: 2, category: 'sculptor')
 User.create(name: 'Pierre', email: 'pierre@gmail.fr', password: 'yesfcgvjkv', id: 3, category: 'sculptor')
@@ -36,6 +37,7 @@ revele = Artwork.new(name: 'Révèle', category: 'Peinture', start_date: '2019-0
 trio = Artwork.new(name: 'trie eau', category: 'Peinture', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 5)
 
 infinition = Artwork.new(name: 'infinition', category: 'sculpture', start_date: '2019-02-28', end_date: '2019-02-28', user_id: 6, address: '16 villa Gaudelet 75011 Paris')
+
 
 
 

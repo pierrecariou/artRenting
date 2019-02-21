@@ -1,5 +1,5 @@
 
-<div class="navbar-wagon navbar-fixed-top">
+<div class="navbar-wagon ">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "art.png", height: 45 %>
@@ -11,9 +11,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "dashboard", "/users/dashboard", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Dashboard", "/users/dashboard", class: "navbar-wagon-item navbar-wagon-link" %>
 
-      <%= link_to "create artwork", "/artworks/new", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Create artwork", "/artworks/new", class: "navbar-wagon-item navbar-wagon-link" %>
 
 
       <!-- Avatar with dropdown menu -->

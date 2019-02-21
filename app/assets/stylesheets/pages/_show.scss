@@ -1,26 +1,58 @@
-h1 {
-  font-weight: bold;
-}
-
 .wrapper {
   background-color: white;
   min-height: 100vh;
-  padding-top: 30px;
+  padding-top: 10px;
   h1 {
     margin: 0;
+    color: #223B51;
   }
 }
 
 .artwork-content {
   position: relative;
+  width: 50%;
+  float: left;
+}
+
+.row-show {
+  width: 50%;
+  float: right;
 }
 
 .info {
   position: absolute;
   bottom: 240px;
-  left: 85px;
+  left: 555px;
   h5 {
-  font-weight: bold;
+    font-weight: bold;
+  }
+  h3 {
+    margin :0px;
+    color: #223B51;
+  }
+  a {
+    color: #223B51;
+  }
+  p {
+    font-size: 13px;
+    margin:0px;
+    color: black;
+  }
+}
+
+.info-left {
+  position: absolute;
+  bottom: -63px;
+  left: 45px;
+   h3 {
+    margin :0px;
+    color: #223B51;
+    font-size: 20px;
+  }
+  p {
+    font-size: 13px;
+    margin:0px;
+    color: black;
   }
 }
 
@@ -32,13 +64,27 @@ h1 {
 .edit {
   position: absolute;
   bottom: 10px;
-  right: 40px;
+  right: -280px;
+  a {
+    color: #223B51;
+  }
 }
 
 
 .artwork-booking {
+  position: relative;
   margin: 40px;
   h2 {
     text-align: center;
+    color: #223B51;
+  }
+
+.btn-primary {
+    position: absolute;
+    color: #fff;
+    background-color: #223B51;
+    border-color: #223B51;
+    left: 60px;
   }
 }
+
