@@ -21,8 +21,8 @@ cyclique = Artwork.new(name: 'Débordement cyclique', category: 'gravure', user_
 bienheureux = Artwork.new(name:'77 bienheureux', category:'sculpture', user_id: 1)
 magnesia = Artwork.new(name:'Magnésia', category: 'sculpture', user_id: 1)
 revele = Artwork.new(name: 'Révèle', category: 'Peinture', user_id: 1)
-trio = Artwork.new(name: 'trie eau', category: 'Peinture', user_id: 1)
-infinition = Artwork.new(name: 'infinition', category: 'sculpture', user_id: 1)
+trio = Artwork.new(name: 'trie eau', category: 'Peinture', user_id: 1, address: '20 rue clement marot 75008 Paris')
+infinition = Artwork.new(name: 'infinition', category: 'sculpture', user_id: 1, address: '16 villa gaudelet 75011 Paris')
 
 
 cyclique.remote_photo_url = url1
