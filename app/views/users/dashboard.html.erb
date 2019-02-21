@@ -33,8 +33,7 @@
 
 <%end %>
 
-<%if @user.artist == nil  %>
-
+<%if @user.artist == false  %>
 
 <% if @booking.status == "pending" %>
     <h2> Booking requests :</h2>
@@ -59,6 +58,7 @@
 <%end %>
 
 <%end %>
+
 
 
 
