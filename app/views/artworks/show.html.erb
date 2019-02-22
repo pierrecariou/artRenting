@@ -54,6 +54,7 @@
       </h2>
     </div>
     <div id="reviews">
+      <%= render 'reviews/form', artwork: @artwork, review: @review %>
       <% if @artwork.reviews.blank? %>
         Be the first to leave a review for <%= @artwork.name %>
       <% else %>
@@ -61,7 +62,6 @@
           <%= render 'reviews/show', review: review %>
         <% end %>
       <% end %>
-      <%= render 'reviews/form', restaurant: @restaurant, review: @review %>
     </div>
   </div>
 </div>
