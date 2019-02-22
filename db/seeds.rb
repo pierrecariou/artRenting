@@ -27,16 +27,16 @@ User.create(name: 'Samy', email: 'samy@gmail.fr', password: 'yesjnibhb', id: 4, 
 User.create(name: 'Claire', email: 'claire@gmail.fr', password: 'yesbhiouvg', id: 5, category: 'painter')
 User.create(name: 'Mickael', email: 'mickael@gmail.fr', password: 'yesguvytctr', id: 6, category: 'sculptor')
 
-cyclique = Artwork.new(name: 'Débordement cyclique', category: 'gravure', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 1)
-bienheureux = Artwork.new(name:'77 bienheureux', category:'sculpture', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 2)
+cyclique = Artwork.new(name: 'Débordement cyclique', category: 'gravure', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 1, address: '41 Quai de Pierre-Scize, 69009 Lyon', price: 370 )
+bienheureux = Artwork.new(name:'77 bienheureux', category:'sculpture', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 2, address: '3 Rue de Lisbonne, 75008 Paris', price: 300  )
 
-magnesia = Artwork.new(name:'Magnésia', category: 'sculpture', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 3)
+magnesia = Artwork.new(name:'Magnésia', category: 'sculpture', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 3, address: '130 Avenue Daumesnil, 75012 Paris', price: 50 )
 
-revele = Artwork.new(name: 'Révèle', category: 'Peinture', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 4)
+revele = Artwork.new(name: 'Révèle', category: 'Peinture', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 4, address: '3 Rue des Minimes, 37000 Tours', price: 200)
 
-trio = Artwork.new(name: 'trie eau', category: 'Peinture', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 5)
+trio = Artwork.new(name: 'trie eau', category: 'Peinture', start_date: '2019-02-05', end_date: '2019-02-28', user_id: 5, address: '41 Quai de Pierre-Scize, 69009 Lyon', price: 30)
 
-infinition = Artwork.new(name: 'infinition', category: 'sculpture', start_date: '2019-02-28', end_date: '2019-02-28', user_id: 6, address: '16 villa Gaudelet 75011 Paris')
+infinition = Artwork.new(name: 'infinition', category: 'sculpture', start_date: '2019-02-28', end_date: '2019-02-28', user_id: 6, price: 500, address: '16 villa Gaudelet 75011 Paris')
 
 
 
