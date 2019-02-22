@@ -1,4 +1,27 @@
 .edit-title {
   text-align: center;
-  color: #005792;
+  color: #223B51;
+}
+
+
+  a{
+  color: #223B51;
+  }
+
+.btn-primary {
+    color: #fff;
+    background-color: #223B51;
+    border-color: #223B51;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #a23131;
+    border-color: #a23131;
+}
+
+.upload-photo{
+  &:hover {
+    cursor: pointer;
+  }
 }

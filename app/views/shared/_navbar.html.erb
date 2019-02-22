@@ -9,11 +9,19 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
-
       <!-- Links when logged in -->
-      <%= link_to "Dashboard", "/users/dashboard", class: "navbar-wagon-item navbar-wagon-link" %>
+      <% current_user.artworks.each do |artwork|%>
+        <% if artwork.bookings.any? {|booking| booking.status == "pending" } %>
+          <div class="animation">
+          <span><%= link_to "Dashboard", "/users/dashboard", id:"custom", class: "navbar-wagon-item navbar-wagon-link" %></span>
+          </div>
+        <%else %>
+          <%= link_to "Dashboard", "/users/dashboard", class: "navbar-wagon-item navbar-wagon-link" %>
+        <%end %>
+      <%end %>
 
       <%= link_to "Create artwork", "/artworks/new", class: "navbar-wagon-item navbar-wagon-link" %>
+
 
 
       <!-- Avatar with dropdown menu -->
