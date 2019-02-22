@@ -9,8 +9,9 @@
         <h1> <%= @artwork.name %> </h1>
         <h3><small>Made by: </small><%= link_to @artwork.user.name, user_path(@artwork.user) %></h3>
         <p> <% @artwork.user.category %></p>
-        <%= cl_image_tag @artwork.photo, height: 480, width: 600, crop: :fill %>
+        <%= cl_image_tag @artwork.photo, height: 480, width: 600, fetch_format: :auto %>
         <% if policy(@artwork).edit? %>
+
           <div class="edit">
             <%= link_to  edit_artwork_path(@artwork) do %>
             <i class="fas fa-edit"></i>

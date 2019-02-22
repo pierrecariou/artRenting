@@ -24,15 +24,14 @@
           <%= f.input :photo_cache, as: :hidden %>
         </div>
 
-        <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-
-              <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-              <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-              <%= f.submit class: 'btn btn-primary' %>
-              <%= link_to artwork_path(@artwork), class: 'btn btn-danger',
-                method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i class="far fa-trash-alt"></i>
-               <% end %>
+        <div class="form-wrapper" style="width: 570px; margin: 0 auto;">
+          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.submit class: 'btn btn-primary' %>
+          <%= link_to artwork_path(@artwork), class: 'btn btn-danger',
+            method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="far fa-trash-alt"></i>
+           <% end %>
         </div>
 
       <% end %>

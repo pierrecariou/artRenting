@@ -23,7 +23,9 @@
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :name %>
           <%= f.input :artist %>
-          <%= f.input :category %>
+          <% @categories = ['
+designer', 'draftsman', 'graffiti artist', 'graphic artist', 'illustrator', 'painter', 'sculptor'] %>
+          <%= f.input :category, collection: @categories %>
         </div>
 
         <div class="form-actions">

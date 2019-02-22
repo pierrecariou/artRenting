@@ -14,3 +14,9 @@
     background-color: #223B51;
     border-color: #223B51;
 }
+
+.upload-photo{
+  &:hover {
+    cursor: pointer;
+  }
+}

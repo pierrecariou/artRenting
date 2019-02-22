@@ -1,44 +1,56 @@
 <div class="container">
 
-  <div class="profile-content">
-    <div class="profile-photo">
-      <%= cl_image_tag @user.photo, height: 130, width: 110, crop: :fill %>
-    </div>
+  <div class="profile">
 
-    <div class="profile-description">
-      <h1><%= @user.name %></h1>
-      <%if @user.artist %>
-        <h3> artist </h3>
-      <%else %>
-        <h3>host</h3>
-      <%end %>
-
-      <p><%= @user.category %></p>
-    </div>
-  </div>
-
-
-  <% @user.artworks.each do |artwork| %>
-    <div class="col-xs-12 col-sm-4 card-height">
-
-      <div class="cards">
-
-        <div class="card" style="background-image: url('<%= cl_image_path artwork.photo, height: 300, width: 400, crop: :fill %>')"></div>
-
-        <div class="card-description">
-          <h3>
-            <% if policy(Artwork).show? %>
-            <%= link_to artwork.name, artwork_path(artwork) %>
-            <% end %>
-          </h3>
-          <p><%= artwork.category %></p>
-        </div>
-
+    <div class="profile-content">
+      <div class="profile-description">
+        <h1><%= @user.name %></h1>
+        <%if @user.artist %>
+          <h4> artist </h4>
+        <%else %>
+          <h4>host</h4>
+        <%end %>
+        <h4><%= @user.category %></h4>
+      </div>
+      <div class="profile-photo">
+        <%= cl_image_tag @user.photo,  width: 150, height: 150, crop: :thumb, gravity: :face, radius: 100 %>
       </div>
     </div>
 
-  <% end %>
+    <div class="my-artwork">
+      <h3> Artworks </h3>
+      <% @user.artworks.each do |artwork| %>
+        <div class="col-xs-12 col-sm-4 card-height">
 
+          <div class="cards">
+
+            <%= link_to artwork_path(artwork) do %>
+              <div class="card" style="background-image: url('<%= cl_image_path artwork.photo, height: 300, width: 400, fetch_format: :auto %>')"></div>
+            <% end %>
+
+            <div class="card-description">
+              <h3>
+                <% if policy(Artwork).show? %>
+                <%= link_to artwork.name, artwork_path(artwork) %>
+                <% end %>
+              </h3>
+              <p><%= artwork.category %></p>
+            </div>
+            <% if policy(artwork).destroy? %>
+              <div class="delete-artwork">
+                <%= link_to artwork_path(artwork),
+                  method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="far fa-trash-alt"></i>
+                 <% end %>
+              </div>
+            <% end %>
+          </div>
+
+
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 

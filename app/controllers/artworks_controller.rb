@@ -13,7 +13,8 @@ class ArtworksController < ApplicationController
       {
         lng: artwork.longitude,
         lat: artwork.latitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { artwork: artwork })
+        infoWindow: render_to_string(partial: "infowindow", locals: { artwork: artwork }),
+        # image_url: helpers.asset_url('paint_brush.png')
       }
     end
   end
