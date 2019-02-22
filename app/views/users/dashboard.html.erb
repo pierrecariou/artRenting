@@ -40,38 +40,42 @@
 <%end %>
 
 <%if @user.artist  %>
-
-<%@user.artworks.each do |artwork|%>
-  <%artwork.bookings.each do |booking|  %>
-  <% if booking.status == "pending" %>
-    <h2> Booking requests </h2>
-    <div class="card-book">
-      <div class="book">
+  <div class="flexbooking">
+    <div>
+    <%@user.artworks.each do |artwork|%>
+      <%artwork.bookings.each do |booking|  %>
+        <% if booking.status == "pending" %>
+          <h2> Booking requests </h2>
+          <h3><%= booking.artwork.name %></h3>
+          <%= cl_image_tag booking.artwork.photo, height: 500, width: 600, crop: :fill %>
+          <p>start :<%= booking.date_start%></p>
+          <p>end :<%= booking.date_finish %></p>
+          <div class="buttons">
+            <%= link_to accept_booking_path(booking) do %>
+              <button type="button" class="btn btn-primary">accept</button>
+            <% end %>
+            <%= link_to decline_booking_path(booking) do %>
+              <button type="button" class="btn btn-primary">decline</button>
+            <% end %>
+          </div>
+        <%end %>
+      <%end %>
+    <%end %>
+  </div>
+  <div>
+  <%@user.artworks.each do |artwork|%>
+    <%artwork.bookings.each do |booking|  %>
+      <% if booking.status == "accepted" %>
+        <h2>Artwork booked</h2>
         <h3><%= booking.artwork.name %></h3>
         <%= cl_image_tag booking.artwork.photo, height: 500, width: 600, crop: :fill %>
         <p>start :<%= booking.date_start%></p>
         <p>end :<%= booking.date_finish %></p>
-      </div>
-    <div class="buttons">
-      <%= link_to accept_booking_path(booking) do %>
-        <button type="button" class="btn btn-primary">accept</button>
-      <% end %>
-      <%= link_to decline_booking_path(booking) do %>
-        <button type="button" class="btn btn-primary">decline</button>
-      <% end %>
-    </div>
-  </div>
-  <% elsif booking.status == "accepted" %>
-    <h2>Artwork booked</h2>
-    <div class="book">
-      <h3><%= booking.artwork.name %></h3>
-      <%= cl_image_tag booking.artwork.photo, height: 500, width: 600, crop: :fill %>
-      <p>start :<%= booking.date_start%></p>
-      <p>end :<%= booking.date_finish %></p>
-    </div>
+      <%end %>
+    <%end %>
   <%end %>
-  <%end %>
-<%end %>
+</div>
+</div>
 <%end %>
 </div>
 
