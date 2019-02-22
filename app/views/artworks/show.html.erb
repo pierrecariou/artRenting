@@ -47,14 +47,20 @@
           </div>
         <!-- </div> -->
       </div>
-      <div>
-        <h2>
-        <%= pluralize @artwork.reviews.size, "review" %>
-        </h2>
-      </div>
-
-
-
+    </div>
+    <div>
+      <h2>
+      <%= pluralize @artwork.reviews.size, "review" %>
+      </h2>
+    </div>
+    <div id="reviews">
+      <% if @artwork.reviews.blank? %>
+        Be the first to leave a review for <%= @artwork.name %>
+      <% else %>
+        <% @artwork.reviews.each do |review| %>
+          <%= render 'reviews/show', review: review %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
