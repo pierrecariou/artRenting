@@ -6,6 +6,7 @@
 </div>
 
 <div class="container">
+  <div id="anchor_search"> </div>
   <div class="row">
     <div class="col-sm-offset-3 col-sm-6">
       <%= form_tag artworks_path, method: :get do %>
@@ -28,8 +29,10 @@
 
         <div class="cards">
 
-          <div class="card" style="background-image: url('<%= artwork.photo.url ? (cl_image_path artwork.photo, height: 300, width: 400, crop: :fill) : "https://media.cargocollective.com/1/22/726497/headerimg/FERGUS-WORK02188-copie.png"; %>')">
-          </div>
+          <%= link_to artwork_path(artwork) do  %>
+            <div class="card" style="background-image: url('<%= artwork.photo.url ? (cl_image_path artwork.photo, height: 300, width: 300, fetch_format: :auto) : "https://media.cargocollective.com/1/22/726497/headerimg/FERGUS-WORK02188-copie.png"; %>')">
+            </div>
+          <% end %>
           <div class="card-description">
             <h3>
               <% if policy(Artwork).show? %>
@@ -37,6 +40,9 @@
               <% end %>
             </h3>
             <p><%= artwork.category %></p>
+            <% if artwork.price.present? %>
+              <p><%= artwork.price %><i class="fas fa-euro-sign"></i> per day</p>
+            <% end %>
             <ul>
               <div class="user-name">
                 <li> <%= cl_image_tag artwork.user.photo.url(:bright_face) %></li>
