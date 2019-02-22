@@ -1,6 +1,7 @@
 class Artwork < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   validates :name, presence: true, uniqueness: true
 
   mount_uploader :photo, PhotoUploader

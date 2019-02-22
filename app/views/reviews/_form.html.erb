@@ -1,0 +1,4 @@
+<%= simple_form_for([ @artwork, review ], remote: true) do |form| %>
+  <%= form.input :content, as: :text, label: false %>
+  <%= form.button :submit %>
+<% end %>
