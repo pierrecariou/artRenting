@@ -3,7 +3,10 @@
   color: #223B51;
 }
 
-.book.buttons {
+.buttons {
+  position: absolute;
+  right: 10px;
+  bottom: 50px;
 }
 
 .card-book {
@@ -14,4 +17,19 @@
 
 .bookings h2{
   text-align: center;
+}
+
+
+.flexbooking {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accepted {
+
+}
+
+.pending {
+  position: relative;
 }
