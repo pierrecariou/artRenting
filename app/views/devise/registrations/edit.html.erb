@@ -29,7 +29,8 @@
                       hint: " leave it blank if you don't want to change it",
                       required: false%>
 
-          <% @categories = ['painter', 'sculptor', 'graffiti artist'] %>
+          <% @categories = ['painter', 'sculptor', 'graffiti artist', '
+designer', 'draftsman', 'illustrator', 'graphic artist'] %>
           <%= f.input :category, collection: @categories, hint: "we need your current password to confirm your changes" %>
 
           <%= f.input :current_password,
