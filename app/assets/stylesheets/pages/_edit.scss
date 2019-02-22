@@ -19,3 +19,9 @@
     background-color: #a23131;
     border-color: #a23131;
 }
+
+.upload-photo{
+  &:hover {
+    cursor: pointer;
+  }
+}
