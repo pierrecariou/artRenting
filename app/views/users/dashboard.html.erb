@@ -1,5 +1,5 @@
 <div class="bookings">
-<%if @user.artist %>
+<%if @user.artist == false%>
 
 <%@user.bookings.each do |booking|%>
   <% if booking.status == "pending" %>
@@ -39,7 +39,7 @@
 
 <%end %>
 
-<%if @user.artist == false  %>
+<%if @user.artist  %>
 
 <% if @booking.status == "pending" %>
     <h2> Booking requests </h2>
